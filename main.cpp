@@ -1,25 +1,25 @@
 #include <iostream>
-#include "karta_platnicza.h"
+#include "Card.h"
 
 using namespace std;
 
 int main()
 {
-    karta_platnicza karta_pla;
-    karta_kredytowa karta_kr;
+    payment_card payment_ca;
+    credit_card credit_ca;
 
-    karta* wskkart{};               //koniecznosc zainicjowania wskaznika na klase bazowa
+    card* wskcard{};               //koniecznosc zainicjowania wskaznika na klase bazowa
 
-    wskkart = &karta_pla;          //wskazujemy wskaznikiem na klase pochodna
-    wskkart->wyplac(4866);
+    wskcard = &payment_ca;          //wskazujemy wskaznikiem na klase pochodna
+    wskcard->pay_out(1300);
 
-    wskkart = &karta_pla;
-    wskkart->wplac(486);
+    wskcard = &payment_ca;
+    wskcard->deposit(486);
 
-    wskkart = &karta_kr;
-    wskkart->wyplac(10000);
+    wskcard = &credit_ca;
+    wskcard->pay_out(10000);
 
-    wskkart = &karta_kr;
-    wskkart->wplac(64161);
+    wskcard = &credit_ca;
+    wskcard->deposit(64161);
     return 0;
 }
