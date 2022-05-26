@@ -4,13 +4,13 @@ using namespace std;
 
 payment_card::payment_card()        //konstruktor karty platniczej
 {
-    balance=100;
+    balance=4500;
 }
 
 credit_card::credit_card()          //konstruktor karty kredytowej
     {
-        balance=100;
-        maxdebt=100;
+        balance=4500;
+        maxdebt=10000;
     }
 
 void payment_card::pay_out(int how_much)
@@ -43,7 +43,7 @@ void credit_card::pay_out(int how_much)
     else
     {
         balance = balance - how_much;
-        cout<<"Tranzakcje wykonano pomyslnie stan dlugu kredytowego po tranzakcji: "<<balance + maxdebt<<"pln"<<endl;
+        cout<<"Tranzakcje wykonano pomyslnie stan konta po tranzakcji: "<<balance + maxdebt<<"pln"<<endl;
     }
 
 }
@@ -51,5 +51,5 @@ void credit_card::pay_out(int how_much)
 void credit_card::deposit(int how_much)
 {
         balance = balance + how_much;
-        cout<<"Tranzakcje wykonano pomyslnie stan dlugu kredytowego po tranzakcji: "<<balance + maxdebt<<"pln"<<endl;
+        cout<<"Tranzakcje wykonano pomyslnie stan konta po tranzakcji: "<<balance + maxdebt<<"pln"<<endl;
 }
