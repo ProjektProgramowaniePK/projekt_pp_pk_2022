@@ -3,10 +3,6 @@
 using namespace std;
 
 
-/*void karta::przewalutuj()       Dojebane to API
-{
-
-}*/
 void payment_card::pay_out(int how_much)
 {
     if (balance <= 0)
@@ -29,21 +25,21 @@ void payment_card::deposit(int how_much)
 
 void credit_card::pay_out(int how_much)
 {
-    if (debt+how_much > maxdebt)
+    if ( (maxdebt + balance) - how_much <= 0)
     {
-        cout<<"Osiagnieto limit kredytowy: "<<maxdebt <<"pln" <<endl;
-        debt=maxdebt;
+        cout<<"Osiagnieto limit kredytowy, nie mozna wyplacic wiecej pieniedzy " <<endl;
+
     }
     else
     {
-        debt = debt + how_much;
-        cout<<"Tranzakcje wykonano pomyslnie stan dlugu kredytowego po tranzakcji: "<<debt<<"pln"<<endl;
+        balance = balance - how_much;
+        cout<<"Tranzakcje wykonano pomyslnie stan dlugu kredytowego po tranzakcji: "<<balance + maxdebt<<"pln"<<endl;
     }
 
 }
 
 void credit_card::deposit(int how_much)
 {
-        debt= debt - how_much;
-        cout<<"Tranzakcje wykonano pomyslnie stan dlugu kredytowego po tranzakcji: "<<debt<<"pln"<<endl;
+        balance = balance + how_much;
+        cout<<"Tranzakcje wykonano pomyslnie stan dlugu kredytowego po tranzakcji: "<<balance + maxdebt<<"pln"<<endl;
 }

@@ -11,15 +11,22 @@ int main()
     card* wskcard{};               //koniecznosc zainicjowania wskaznika na klase bazowa
 
     wskcard = &payment_ca;          //wskazujemy wskaznikiem na klase pochodna
-    wskcard->pay_out(1300);
+    wskcard->pay_out(100);
 
     wskcard = &payment_ca;
-    wskcard->deposit(486);
+    wskcard->deposit(400);
 
     wskcard = &credit_ca;
-    wskcard->pay_out(10000);
+    wskcard->deposit(100);
 
     wskcard = &credit_ca;
-    wskcard->deposit(64161);
+    wskcard->pay_out(100);
+
+    wskcard = &payment_ca;
+    wskcard->deposit(300);
+
+    wskcard = &payment_ca;
+    wskcard->pay_out(200);
+
     return 0;
 }

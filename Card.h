@@ -12,7 +12,6 @@ class card                                     //klasa zawierajaca funkcje wirtu
 
         virtual void pay_out(int how_much)=0;         //funkcje wirtualne dajace polimorfizm
         virtual void deposit(int how_much)=0;
-        //void przewalutuj();
 
 };
 
@@ -20,7 +19,7 @@ class payment_card: public card{
 
 private:
 
-    double balance=1200;                  //wartosc do testow, normalnie musi zostac pobrana z bazydanych, albo zostala juz pobrana i przyjaznia uzyskujemy dostep
+    double balance=500;                  //wartosc do testow, normalnie musi zostac pobrana z bazydanych, albo zostala juz pobrana i przyjaznia uzyskujemy dostep
 
 public:
 
@@ -32,8 +31,8 @@ class credit_card: public card{
 
 private:
 
-    double debt=5000;                   //iedntyczna sytuacja co w karcie platniczej
-    double maxdebt=10000;
+    double balance=500;                   //iedntyczna sytuacja co w karcie platniczej
+    double maxdebt=1000;
 
 public:
 
