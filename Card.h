@@ -5,8 +5,6 @@
 class card                                     //klasa zawierajaca funkcje wirtualne jest klasa abstrakcyjna, nie posiadajac obiektu
 {
     private:
-
-        unsigned int id;
         double balance;
     public:
 
@@ -19,10 +17,10 @@ class payment_card: public card{
 
 private:
 
-    double balance=500;                  //wartosc do testow, normalnie musi zostac pobrana z bazydanych, albo zostala juz pobrana i przyjaznia uzyskujemy dostep
+    double balance;
 
 public:
-
+    payment_card();
     void pay_out(int how_much);
     void deposit(int how_much);
 };
@@ -31,11 +29,12 @@ class credit_card: public card{
 
 private:
 
-    double balance=500;                   //iedntyczna sytuacja co w karcie platniczej
-    double maxdebt=1000;
+    double balance;
+    double maxdebt;
 
 public:
 
+    credit_card();
     void pay_out(int how_much);
     void deposit(int how_much);
 };

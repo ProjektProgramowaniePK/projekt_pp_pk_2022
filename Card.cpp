@@ -2,6 +2,16 @@
 #include "iostream"
 using namespace std;
 
+payment_card::payment_card()        //konstruktor karty platniczej
+{
+    balance=100;
+}
+
+credit_card::credit_card()          //konstruktor karty kredytowej
+    {
+        balance=100;
+        maxdebt=100;
+    }
 
 void payment_card::pay_out(int how_much)
 {
